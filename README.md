@@ -20,3 +20,7 @@ This project aims to explore and extract all names from an undocumented autocomp
   - Accepts `query` param (e.g., `query=a`).
   - Returns JSON: `{"version": "v1", "count": X, "results": [...]}`.
   - Max 10 results per request.
+
+## Findings
+- **Rate Limits**: Hits `429 Too Many Requests` after ~50 requests/minute. `Retry-After` header suggests 1s wait.
+- **Approach**: Added retry logic with 1s delay to handle rate limits.
