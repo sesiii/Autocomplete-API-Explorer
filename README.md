@@ -24,3 +24,52 @@ This project aims to explore and extract all names from an undocumented autocomp
 ## Findings
 - **Rate Limits**: Hits `429 Too Many Requests` after ~50 requests/minute. `Retry-After` header suggests 1s wait.
 - **Approach**: Added retry logic with 1s delay to handle rate limits.
+
+## Progress
+- Added `extract_names.py` to fetch names using two-letter prefixes.
+- Strategy: Query `aa` to `zz`, stop branch if no results.
+- Initial test: Works but slow (~676 requests).
+
+## Findings
+- No pagination params (`limit`, `offset`) work.
+
+
+# Autocomplete API Explorer
+
+## Overview
+Extracted names from an undocumented API at `http://35.200.185.69:8000`.
+
+## Approach
+1. Explored `/v1/autocomplete` with `explore.py`.
+2. Probed endpoints with `probe_endpoints.sh`.
+3. Handled rate limits with retries.
+4. Built `extract_names.py` for v1, v2, v3 using prefix queries.
+
+## Findings
+- **Endpoints**:
+  - `/`: Hints at versions and guessing endpoints.
+  - `/v1/autocomplete`: 10 results, ~6,710 names.
+  - `/v2/autocomplete`: 12 results, different dataset.
+  - `/v3/autocomplete`: 15 results, symbols/spaces.
+  - **Failed**: `/docs`, `/list`, `/v1/full`, `/v2/full`, `/v3/full`, `/v1/names`, `/v2/list`, `/v3/list`, `/v4/autocomplete`, etc. (404).
+- **Constraints**:
+  - Rate limit: `429`, ~50/min, `Retry-After: 1s`.
+  - No pagination (`limit`, `offset` ignored).
+  - `/v1/autocomplete`: GET only (`405` on POST).
+- **Tested**: See `probe_endpoints.sh` for all attempts.
+
+## Results
+- **v1**: 6,720 names.
+- **v2**: 4168 names.
+- **v3**: 3732 names.
+
+
+## Files
+- `explore.py`: Initial tests.
+- `probe_endpoints.sh`: Endpoint probing.
+- `extract_names.py`: Full extraction.
+- `names_v1.txt`, `names_v2.txt`, `names_v3.txt`: Results.
+
+## Setup
+- `pip install requests`
+- Run: `python extract_names.py`
