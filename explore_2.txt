@@ -1,0 +1,20 @@
+Query: a
+Status: 200
+Headers: {'date': 'Fri, 21 Mar 2025 18:29:07 GMT', 'server': 'uvicorn', 'content-length': '138', 'content-type': 'application/json'}
+Response: {"version":"v1","count":10,"results":["aa","aabdknlvkc","aabrkcd","aadgdqrwdy","aagqg","aaiha","aainmxg","aajfebume","aajwv","aakfubvxv"]}
+
+Query: ab
+Status: 200
+Headers: {'date': 'Fri, 21 Mar 2025 18:29:07 GMT', 'server': 'uvicorn', 'content-length': '130', 'content-type': 'application/json'}
+Response: {"version":"v1","count":10,"results":["ab","abagnc","abclmm","abgtppipcr","abl","abniagyl","abniep","abogjttu","abpwkj","abqsqh"]}
+
+Query: abc
+Status: 200
+Headers: {'date': 'Fri, 21 Mar 2025 18:29:07 GMT', 'server': 'uvicorn', 'content-length': '47', 'content-type': 'application/json'}
+Response: {"version":"v1","count":1,"results":["abclmm"]}
+
+Query: b
+Status: 200
+Headers: {'date': 'Fri, 21 Mar 2025 18:29:07 GMT', 'server': 'uvicorn', 'content-length': '123', 'content-type': 'application/json'}
+Response: {"version":"v1","count":10,"results":["ba","baasruv","babfu","baezgu","bail","bajm","bamgoreltq","bao","bapah","baqpkfjn"]}
+
