@@ -61,7 +61,7 @@ This project aims to explore and extract all names from an undocumented autocomp
 
 ## Files
 - `explore.py`: Initial tests.
-- `probe_endpoints.sh`: Endpoint probing.
+- `script.sh`: Endpoint probing.
 - `extract_names.py`: Full extraction.
 - `names_v1.txt`, `names_v2.txt`, `names_v3.txt`: Results.
 
