@@ -34,11 +34,6 @@ This project aims to explore and extract all names from an undocumented autocomp
 - No pagination params (`limit`, `offset`) work.
 
 
-# Autocomplete API Explorer
-
-## Overview
-Extracted names from an undocumented API at `http://35.200.185.69:8000`.
-
 ## Approach
 1. Explored `/v1/autocomplete` with `explore.py`.
 2. Probed endpoints with `probe_endpoints.sh`.
@@ -59,9 +54,9 @@ Extracted names from an undocumented API at `http://35.200.185.69:8000`.
 - **Tested**: See `probe_endpoints.sh` for all attempts.
 
 ## Results
-- **v1**: 6,720 names.
-- **v2**: 4168 names.
-- **v3**: 3732 names.
+- **v1**: 6,720 names(702 requests).
+- **v2**: 3991 names(639 requests).
+- **v3**: 3732 names(664 requests).
 
 
 ## Files
