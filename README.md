@@ -51,7 +51,7 @@ This project aims to explore and extract all names from an undocumented autocomp
   - Rate limit: `429`, ~50/min, `Retry-After: 1s`.
   - No pagination (`limit`, `offset` ignored).
   - `/v1/autocomplete`: GET only (`405` on POST).
-- **Tested**: See `probe_endpoints.sh` for all attempts.
+- **Tested**: See `script.sh` for all attempts.
 
 ## Results
 - **v1**: 6,720 names(702 requests).
